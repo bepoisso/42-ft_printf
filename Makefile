@@ -6,56 +6,44 @@
 #    By: bepoisso <bepoisso@student.42perpignan.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/21 18:34:37 by bepoisso          #+#    #+#              #
-#    Updated: 2024/08/25 20:10:47 by bepoisso         ###   ########.fr        #
+#    Updated: 2024/08/26 01:01:23 by bepoisso         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-#_________________VARIABLE_________________
-
 NAME = libftprintf.a
-CC = cc
-CFLAGS = -Wall -Wextra -Werror
-INC_PATH = ./includes
-SRC_PATH = ./srcs
-OBJ_PATH = ./objects
-LIBFT = libft/
-LIBFT_A = $(addprefix $(LIBFT), libft.a)
+EXEC = compil
 
-#_________________FILES_________________
+SRC_DIR = srcs
+OBJ_DIR = objs
+INC_DIR = includes
 
-SRC_FILES=\
+SRCS = $(SRC_DIR)/ft_base.c $(SRC_DIR)/ft_printf.c $(SRC_DIR)/ft_string.c
+OBJS = $(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 
-BONUS_FILES=\
-
-SRCS = $(addprefix $(SRC_PATH)/, $(SRC_FILES))
-OBJS = $(addprefix $(OBJ_PATH)/, $(SRC_FILES:.c=.o))
-BONUS_SRCS = $(addprefix $(SRC_PATH)/, $(BONUS_FILES))
-BONUS_OBJS = $(addprefix $(OBJ_PATH)/, $(BONUS_FILES:.c=.o))
-
-#_________________RULES_________________
+CFLAGS = -Wall -Wextra -Werror -I$(INC_DIR)
+LIBFT = libft/libft.a
 
 all: $(NAME)
 
-$(NAME): $(OBJS) $(LIBFT_A)
-	$(CC) $(CFLAGS) $(OBJS) $(LIBFT_A) -o $(NAME)
+$(NAME): $(OBJS)
+	@make -C libft
+	@ar rcs $(NAME) $(OBJS) libft/*.o
 
-$(LIBFT_A) :
-	make -s -C $(LIBFT)
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c | $(OBJ_DIR)
+	@$(CC) $(CFLAGS) -c $< -o $@
 
-bonus: $(BONUS_OBJS)
-	@ar rcs $(NAME) $^
-
-$(OBJ_PATH)/%.o: $(SRC_PATH)/%.c | $(OBJ_PATH)
-	$(CC) $(CFLAGS) -I$(INC_PATH) -o $@ -c $<
+$(OBJ_DIR):
+	@mkdir -p $(OBJ_DIR)
 
 clean:
-	rm -rf $(OBJS) $(BONUS_OBJS)
-	make -C $(LIBFT) clean
+	@make clean -C libft
+	@rm -rf $(OBJ_DIR)
+	@rm -rf main.o
 
 fclean: clean
-	rm -f $(NAME)
-	make -C $(LIBFT) clean
+	@make fclean -C libft
+	@rm -f $(NAME) $(EXEC)
 
 re: fclean all
 
-.PHONY: all bonus clean fclean re
+.PHONY: all clean fclean re
