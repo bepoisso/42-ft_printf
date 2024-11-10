@@ -1,10 +1,16 @@
 <div align="center">
-  <img height="300" src="https://cdn.discordapp.com/attachments/783829038665433099/1278720273608347750/Black_And_White_Modern_Typographic_Simple_Virus_Apparel_Logo_1.png?ex=66d1d48e&is=66d0830e&hm=cbc63765ab163b12ab8f3740386553b88fc0209a1b8ce6610ccfbbfb1df989f5&"  />
+  <img height="200" src="https://raw.githubusercontent.com/Benjamin-poisson/My_image_bank/refs/heads/main/printf.png"  />
 </div>
 
 # ft_printf - Custom Print Function
 
 The `ft_printf` project is an exercise to re-implement the standard `printf()` function in C. This project provides a thorough introduction to variadic functions and demonstrates the ability to handle variable argument lists in C programming.
+
+## Status
+<div align="center">
+  <img height="200" src="https://raw.githubusercontent.com/Benjamin-poisson/My_image_bank/refs/heads/main/printf_succes.png"  />
+</div>
+
 
 ## Overview
 
