@@ -8,7 +8,7 @@ The `ft_printf` project is an exercise to re-implement the standard `printf()` f
 
 ## Status
 <div align="center">
-  <img height="200" src="https://raw.githubusercontent.com/Benjamin-poisson/My_image_bank/refs/heads/main/printf_succes.png"  />
+  <img height="200" src="https://raw.githubusercontent.com/Benjamin-poisson/My_image_bank/refs/heads/main/printf_success.png"  />
 </div>
 
 
