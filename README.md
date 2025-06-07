@@ -76,4 +76,12 @@ Bonus features are optional but encouraged:
 - Handle flags `-`, `0`, `.`, and minimum field width with all conversions.
 - Manage flags `#` and `+` (including space as a flag).
 
+- ## Disclamer
+- 🇬🇧 This project has an educational purpose and you should under no circumstances copy and paste. Cheat is bad. Dont cheat
+
+- 🇫🇷 Ce projet a un but educatif et vous ne devez en auccun cas faire du copier coller. Tricher c'est mal. Ne trichez pas
+
+----
+©42Perpignan(bepoisso)
+
 Bonuses will only be evaluated if the mandatory part is flawless. If any mandatory requirement is not met, the bonus will not be considered.
